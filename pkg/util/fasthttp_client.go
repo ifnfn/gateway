@@ -8,7 +8,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/fagongzi/gateway/pkg/conf"
+	"gateway/pkg/conf"
+
 	"github.com/valyala/fasthttp"
 )
 

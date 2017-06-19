@@ -3,7 +3,8 @@ package proxy
 import (
 	"errors"
 
-	"github.com/fagongzi/gateway/pkg/filter"
+	"gateway/pkg/filter"
+
 	"github.com/valyala/fasthttp"
 )
 

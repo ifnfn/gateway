@@ -3,8 +3,9 @@ package proxy
 import (
 	"time"
 
+	"gateway/pkg/filter"
+
 	"github.com/CodisLabs/codis/pkg/utils/log"
-	"github.com/fagongzi/gateway/pkg/filter"
 )
 
 // AccessFilter record the http access log

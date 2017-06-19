@@ -3,8 +3,9 @@ package server
 import (
 	"net/http"
 
-	"github.com/fagongzi/gateway/pkg/lb"
-	"github.com/fagongzi/gateway/pkg/model"
+	"gateway/pkg/lb"
+	"gateway/pkg/model"
+
 	"github.com/labstack/echo"
 )
 

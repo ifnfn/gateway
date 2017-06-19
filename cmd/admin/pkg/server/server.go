@@ -3,7 +3,8 @@ package server
 import (
 	"fmt"
 
-	"github.com/fagongzi/gateway/pkg/model"
+	"gateway/pkg/model"
+
 	"github.com/labstack/echo"
 	sd "github.com/labstack/echo/engine/standard"
 	mw "github.com/labstack/echo/middleware"

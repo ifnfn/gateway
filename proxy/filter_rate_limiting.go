@@ -4,8 +4,9 @@ import (
 	"errors"
 	"net/http"
 
+	"gateway/pkg/filter"
+
 	"github.com/CodisLabs/codis/pkg/utils/log"
-	"github.com/fagongzi/gateway/pkg/filter"
 )
 
 var (

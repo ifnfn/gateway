@@ -3,7 +3,7 @@ package model
 import (
 	"encoding/json"
 
-	"github.com/fagongzi/gateway/pkg/conf"
+	"gateway/pkg/conf"
 )
 
 // ProxyInfo proxy info

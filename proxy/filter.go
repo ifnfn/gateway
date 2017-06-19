@@ -6,9 +6,10 @@ import (
 	"strings"
 	"time"
 
+	"gateway/pkg/filter"
+	"gateway/pkg/model"
+
 	"github.com/CodisLabs/codis/pkg/utils/log"
-	"github.com/fagongzi/gateway/pkg/filter"
-	"github.com/fagongzi/gateway/pkg/model"
 	"github.com/valyala/fasthttp"
 )
 

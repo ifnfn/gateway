@@ -4,7 +4,7 @@ import (
 	"flag"
 	"runtime"
 
-	"github.com/fagongzi/gateway/cmd/admin/pkg/server"
+	"gateway/cmd/admin/pkg/server"
 )
 
 var (

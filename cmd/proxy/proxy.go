@@ -8,10 +8,11 @@ import (
 	_ "net/http/pprof"
 	"runtime"
 
+	"gateway/pkg/conf"
+	"gateway/pkg/util"
+	"gateway/proxy"
+
 	"github.com/CodisLabs/codis/pkg/utils/log"
-	"github.com/fagongzi/gateway/pkg/conf"
-	"github.com/fagongzi/gateway/pkg/util"
-	"github.com/fagongzi/gateway/proxy"
 )
 
 var (

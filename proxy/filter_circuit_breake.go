@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"net/http"
 
-	"github.com/fagongzi/gateway/pkg/filter"
-	"github.com/fagongzi/gateway/pkg/model"
+	"gateway/pkg/filter"
+	"gateway/pkg/model"
 )
 
 const (

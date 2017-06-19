@@ -1,9 +1,10 @@
 package server
 
 import (
-	"github.com/fagongzi/gateway/pkg/model"
-	"github.com/labstack/echo"
 	"net/http"
+
+	"gateway/pkg/model"
+	"github.com/labstack/echo"
 )
 
 func (server *AdminServer) newBind() echo.HandlerFunc {

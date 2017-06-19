@@ -1,6 +1,6 @@
 package proxy
 
-import "github.com/fagongzi/gateway/pkg/filter"
+import "gateway/pkg/filter"
 
 // AnalysisFilter analysis filter
 type AnalysisFilter struct {

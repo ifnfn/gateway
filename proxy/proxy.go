@@ -8,10 +8,11 @@ import (
 	"sync"
 	"time"
 
+	"gateway/pkg/conf"
+	"gateway/pkg/model"
+	"gateway/pkg/util"
+
 	"github.com/CodisLabs/codis/pkg/utils/log"
-	"github.com/fagongzi/gateway/pkg/conf"
-	"github.com/fagongzi/gateway/pkg/model"
-	"github.com/fagongzi/gateway/pkg/util"
 	"github.com/valyala/fasthttp"
 )
 

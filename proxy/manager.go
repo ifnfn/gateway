@@ -4,9 +4,10 @@ import (
 	"net"
 	"net/rpc"
 
+	"gateway/pkg/model"
+	"gateway/pkg/util"
+
 	"github.com/CodisLabs/codis/pkg/utils/log"
-	"github.com/fagongzi/gateway/pkg/model"
-	"github.com/fagongzi/gateway/pkg/util"
 )
 
 // Manager support runtime remote interface

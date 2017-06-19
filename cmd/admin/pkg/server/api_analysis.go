@@ -6,7 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/fagongzi/gateway/pkg/model"
+	"gateway/pkg/model"
+
 	"github.com/labstack/echo"
 )
 

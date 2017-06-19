@@ -2,9 +2,11 @@ package server
 
 import (
 	"fmt"
-	"github.com/fagongzi/gateway/pkg/model"
-	"github.com/labstack/echo"
 	"net/http"
+
+	"gateway/pkg/model"
+
+	"github.com/labstack/echo"
 )
 
 func (server *AdminServer) getRoutings() echo.HandlerFunc {

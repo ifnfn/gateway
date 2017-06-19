@@ -5,9 +5,10 @@ import (
 	"sync"
 	"time"
 
+	"gateway/goetty"
+	"gateway/pkg/conf"
+
 	"github.com/CodisLabs/codis/pkg/utils/log"
-	"github.com/fagongzi/gateway/pkg/conf"
-	"github.com/fagongzi/goetty"
 	"github.com/valyala/fasthttp"
 )
 

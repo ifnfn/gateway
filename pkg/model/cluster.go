@@ -6,9 +6,10 @@ import (
 	"io"
 	"sync"
 
+	"gateway/pkg/lb"
+	"gateway/pkg/util"
+
 	"github.com/CodisLabs/codis/pkg/utils/log"
-	"github.com/fagongzi/gateway/pkg/lb"
-	"github.com/fagongzi/gateway/pkg/util"
 	"github.com/valyala/fasthttp"
 )
 

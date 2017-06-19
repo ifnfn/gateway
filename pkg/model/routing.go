@@ -10,8 +10,9 @@ import (
 	"strconv"
 	"strings"
 
+	"gateway/goetty"
+
 	"github.com/brettlangdon/forge"
-	"github.com/fagongzi/goetty"
 	"github.com/valyala/fasthttp"
 )
 

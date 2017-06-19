@@ -5,7 +5,7 @@ import (
 
 	"encoding/base64"
 
-	"github.com/fagongzi/gateway/pkg/model"
+	"gateway/pkg/model"
 	"github.com/labstack/echo"
 )
 
