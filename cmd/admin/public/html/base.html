@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="gateway">
+
 <head lang="zh-CN">
-    <title>Gateway Admin</title>
+    <title>Gateway 管理系统</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,50 +24,50 @@
     <script src="/assets/js/routing.js"></script>
     <script src="/assets/js/app.js"></script>
 </head>
+
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Gateway Admin</a>
+                <a class="navbar-brand" href="#">Gateway Admin</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">总览面板</a></li>
+                    <li><a href="#">设置</a></li>
+                    <li><a href="#">帮助</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <input type="text" class="form-control" placeholder="Search...">
+                </form>
+            </div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search...">
-            </form>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">总览面板 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#/proxies">代理服务</a></li>
+                    <li><a href="#/clusters">服务集群</a></li>
+                    <li><a href="#/servers">服务程序</a></li>
+                    <li><a href="#/apis">API</a></li>
+                    <li><a href="#/routings">路由器</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
+
+            </div>
         </div>
     </div>
-</nav>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li>
-                <li><a href="#/proxies">Proxies</a></li>
-                <li><a href="#/clusters">Clusters</a></li>
-                <li><a href="#/servers">Servers</a></li>
-                <li><a href="#/apis">API</a></li>
-                <li><a href="#/routings">Routings</a></li>
-            </ul>
-        </div>
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
-            
-        </div>
-    </div>
-</div>
 </body>
+
 </html>

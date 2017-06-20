@@ -1,8 +1,8 @@
-<h1 class="page-header">Proxies</h1>
+<h1 class="page-header">代理服务器</h1>
 
 <div>
     <form style="margin-bottom: 3px;" class="form-inline">  
-        <label for="LogLevel">LogLevel:</label>
+        <label for="LogLevel">日志级别:</label>
         <select ng-model="logLevel" id="LogLevel">
             <option value="info">info</option>
             <option value="debug">debug</option>
@@ -10,7 +10,7 @@
             <option value="error">error</option>
         </select>
 
-        <label for="search">Search:</label>
+        <label for="search">搜索:</label>
         <input type="text" class="form-control" ng-model="q" id="search" />
     </form>
 </div>
@@ -19,10 +19,10 @@
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th>Addr</th>
-            <th>Manager Addr</th>
-            <th>Log Level</th>
-            <th>Opts</th>
+            <th>代理服务地址</th>
+            <th>管理地址</th>
+            <th>日志级别</th>
+            <th>操作</th>
         </tr>
         </thead>
 
@@ -32,7 +32,7 @@
                 <td>{{proxy.conf.mgrAddr}}</td>
                 <td>{{proxy.conf.logLevel}}</td>
                 <td>
-                    <button type="button" class="btn btn-success btn-sm" ng-click="setLogLevel(proxy.conf.mgrAddr)">SetLogLevel</button>
+                    <button type="button" class="btn btn-success btn-sm" ng-click="setLogLevel(proxy.conf.mgrAddr)">设置日志级别</button>
                 </td>
             </tr>
         </tbody>

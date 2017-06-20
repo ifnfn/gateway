@@ -2,17 +2,17 @@
 	<div class="panel-heading">Create a API Url</div>
 	<div class="panel-body">
 		<div class="form-group">
-			<label for="name">API Name</label>
+			<label for="name">API 名称</label>
 			<input type="text" class="form-control" ng-model="newName" id="name">
 		</div>
 
 		<div class="form-group">
-			<label for="url">Url</label>
+			<label for="url">URL</label>
 			<input type="text" class="form-control" ng-model="newUrl" id="url">
 		</div>
 
 		<div class="form-group">
-			<label for="method">Method</label>
+			<label for="method">HTTP 方法</label>
 			<select class="form-control" ng-model="newMethod" id="method">
                 <option value="*" selected="selected">*</option>
                 <option value="GET">GET</option>
@@ -23,20 +23,20 @@
 		</div>
 
 		<div class="form-group">
-			<label for="status">Status</label>
+			<label for="status">状态</label>
 			<select class="form-control" ng-model="newStatus" id="status">
-                <option value="0" selected="selected">Down</option>
-                <option value="1">UP</option>
+                <option value="0" selected="selected">下线</option>
+                <option value="1">上线</option>
             </select>
 		</div>
 
 		<div class="form-group">
-			<label for="desc">Desc</label>
+			<label for="desc">详细描述</label>
 			<textarea class="form-control" ng-model="newDesc" id="desc" rows="4"></textarea>
 		</div>
 
 		<div class="form-group">
-			<label for="accessControl">AccessControl</label>
+			<label for="accessControl">访问控制</label>
 			<textarea json-text class="form-control" ng-model="newAccessControl" id="accessControl" rows="15"></textarea>
 		</div>
 
@@ -49,28 +49,28 @@
 
 
 <div class="panel panel-default">
-	<div class="panel-heading">API dispatch nodes</div>
+	<div class="panel-heading">API 转发到集群结点</div>
 	<div class="panel-body">
 		<form class="form-inline">
 			<div class="form-group">
-				<label for="clusterName">Cluster</label>
+				<label for="clusterName">集群</label>
 				<select class="form-control" ng-model="newClusterName" id="clusterName">
                     <option ng-repeat="c in clusters" value="{{c.name}}">{{c.name}}</option>
                 </select>
 			</div>
 			<div class="form-group">
-				<label for="nodeAttrName">AttrName</label>
+				<label for="nodeAttrName">属性名</label>
 				<input type="text" size="10" class="form-control" ng-model="newNodeAttrName" id="nodeAttrName" />
 			</div>
 			<div class="form-group">
-				<label for="nodeRewrite">Rewrite</label>
+				<label for="nodeRewrite">重定向</label>
 				<input type="text" class="form-control" ng-model="newNodeRewrite" id="nodeRewrite" />
 			</div>
 			<div class="form-group">
-				<label for="validation">Validation</label>
+				<label for="validation">检验</label>
 				<textarea json-text class="form-control" ng-model="newValidation" id="validation" rows="15"></textarea>
 			</div>
-			<button type="button" class="btn btn-default" ng-click="addNode()">Add</button>
+			<button type="button" class="btn btn-default" ng-click="addNode()">增加</button>
 		</form>
 	</div>
 </div>
@@ -78,11 +78,11 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
-			<th>Cluster</th>
-			<th>AttrName</th>
-			<th>Rewrite</th>
-			<th>Validation</th>
-			<th>Opts</th>
+			<th>集群</th>
+			<th>属性名</th>
+			<th>重定向</th>
+			<th>检验</th>
+			<th>操作</th>
 		</tr>
 	</thead>
 
@@ -101,10 +101,10 @@
 				<textarea json-text class="form-control" ng-model="n.validations" rows="15"></textarea>
 			</td>
 			<td>
-				<button type="button" class="btn btn-default" ng-click="delete(n)">Delete</button>
+				<button type="button" class="btn btn-default" ng-click="delete(n)">删除</button>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
-<button type="button" class="btn btn-default" ng-click="add()">Submit</button>
+<button type="button" class="btn btn-default" ng-click="add()">增加</button>

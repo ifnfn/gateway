@@ -3,10 +3,10 @@
 <div>
 	<form style="margin-bottom: 3px;" class="form-inline">
 		<button type="button" class="btn btn-success btn-sm" ng-click="create()">
-            Create
+            新建
         </button>
 
-		<label for="search">Search:</label>
+		<label for="search">搜索:</label>
 		<input type="text" class="form-control" ng-model="q" id="search" />
 	</form>
 </div>
@@ -15,15 +15,15 @@
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
-				<th width="5%">Name</th>
-				<th width="10%">Url</th>
-				<th width="5%">Method</th>
-				<th width="5%">Status</th>
-				<th width="15%">Desc</th>
-				<th width="15%">Dispatch Nodes</th>
-				<th width="10%">Access Control</th>
-				<th width="10%">Mock</th>
-				<th width="30%">Opts</th>
+				<th width="5%">名称</th>
+				<th width="10%">URL</th>
+				<th width="5%">方法</th>
+				<th width="5%">状态</th>
+				<th width="15%">描述</th>
+				<th width="15%">调度节点</th>
+				<th width="10%">A访问控制</th>
+				<th width="10%">模拟数据</th>
+				<th width="30%">操作</th>
 			</tr>
 		</thead>
 
@@ -48,10 +48,10 @@
 					<table class="table table-bordered ">
 						<thead>
 							<tr>
-								<th>Cluster</th>
-								<th>AttrName</th>
-								<th>Rewrite</th>
-								<th>Validation</th>
+								<th>集群</th>
+								<th>属性</th>
+								<th>重定位</th>
+								<th>验证</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -71,11 +71,11 @@
 					{{api.mock | json}}
 				</td>
 				<td>
-					<button type="button" class="btn btn-success btn-sm" ng-click="up(api)">UP</button>
-					<button type="button" class="btn btn-success btn-sm" ng-click="down(api)">DOWN</button>
-					<button type="button" class="btn btn-success btn-sm" ng-click="delete(api.encodeURL, api.method)">Delete</button>
+					<button type="button" class="btn btn-success btn-sm" ng-click="up(api)">上线</button>
+					<button type="button" class="btn btn-success btn-sm" ng-click="down(api)">下线</button>
+					<button type="button" class="btn btn-success btn-sm" ng-click="delete(api.encodeURL, api.method)">删除</button>
 				</td>
-			</tr>
+			</tr>UP
 		</tbody>
 	</table>
 </div>
@@ -95,7 +95,7 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>Name</th>
+								<th>名称</th>
 								<th>Pattern</th>
 								<th>Load Balance</th>
 								<th>ServerCounts</th>
