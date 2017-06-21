@@ -1,125 +1,129 @@
 <h1 class="page-header">API</h1>
 
 <div>
-	<form style="margin-bottom: 3px;" class="form-inline">
-		<button type="button" class="btn btn-success btn-sm" ng-click="create()">
+    <form style="margin-bottom: 3px;" class="form-inline">
+        <button type="button" class="btn btn-success btn-sm" ng-click="create()">
             新建
         </button>
 
-		<label for="search">搜索:</label>
-		<input type="text" class="form-control" ng-model="q" id="search" />
-	</form>
+        <label for="search">搜索:</label>
+        <input type="text" class="form-control" ng-model="q" id="search" />
+    </form>
 </div>
 
 <div class="table-responsive">
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th width="5%">名称</th>
-				<th width="10%">URL</th>
-				<th width="5%">方法</th>
-				<th width="5%">状态</th>
-				<th width="15%">描述</th>
-				<th width="15%">调度节点</th>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th width="12%">名称</th>
+                <th width="15%">URL</th>
+                <th width="5%">方法</th>
+                <th width="5%">状态</th>
+                <th width="15%">描述</th>
+                <th width="30%">调度节点</th>
+                <!--
 				<th width="10%">A访问控制</th>
 				<th width="10%">模拟数据</th>
-				<th width="30%">操作</th>
-			</tr>
-		</thead>
+-->
+                <th width="18%">操作</th>
+            </tr>
+        </thead>
 
-		<tbody>
-			<tr ng-repeat="api in apis | filter: q">
-				<td>
-					<a href="#/apis/{{api.encodeURL}}/{{api.method}}">{{api.name}}</a>
-				</td>
-				<td>
-					<span>{{api.url}}</span>
-				</td>
-				<td>
-					{{api.method}}
-				</td>
-				<td>
-					{{api.status | status}}
-				</td>
-				<td>
-					{{api.desc}}
-				</td>
-				<td>
-					<table class="table table-bordered ">
-						<thead>
-							<tr>
-								<th>集群</th>
-								<th>属性</th>
-								<th>重定位</th>
-								<th>验证</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="n in api.nodes">
-								<td><a href="#/clusters/{{n.clusterName}}">{{n.clusterName}}</a></td>
-								<td>{{n.attrName}}</td>
-								<td>{{n.rewrite}}</td>
-								<td>{{n.validations | json}}</td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-				<td>
-					{{api.accessControl | json}}
-				</td>
-				<td>
-					{{api.mock | json}}
-				</td>
-				<td>
-					<button type="button" class="btn btn-success btn-sm" ng-click="up(api)">上线</button>
-					<button type="button" class="btn btn-success btn-sm" ng-click="down(api)">下线</button>
-					<button type="button" class="btn btn-success btn-sm" ng-click="delete(api.encodeURL, api.method)">删除</button>
-				</td>
-			</tr>UP
-		</tbody>
-	</table>
+        <tbody>
+            <tr ng-repeat="api in apis | filter: q">
+                <td>
+                    <a href="#/apis/{{api.encodeURL}}/{{api.method}}">{{api.name}}</a>
+                </td>
+                <td>
+                    <span>{{api.url}}</span>
+                </td>
+                <td>
+                    {{api.method}}
+                </td>
+                <td>
+                    {{api.status | status}}
+                </td>
+                <td>
+                    {{api.desc}}
+                </td>
+                <td>
+                    <table class="table table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>集群</th>
+                                <th>属性</th>
+                                <th>重定位</th>
+                                <th>验证</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="n in api.nodes">
+                                <td><a href="#/clusters/{{n.clusterName}}">{{n.clusterName}}</a></td>
+                                <td>{{n.attrName}}</td>
+                                <td>{{n.rewrite}}</td>
+                                <td>{{n.validations | json}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <!--
+                <td>
+                    {{api.accessControl | json}}
+                </td>
+                <td>
+                    {{api.mock | json}}
+                </td>
+ -->
+                <td>
+                    <button type="button" class="btn btn-success btn-sm" ng-click="up(api)">上线</button>
+                    <button type="button" class="btn btn-success btn-sm" ng-click="down(api)">下线</button>
+                    <button type="button" class="btn btn-success btn-sm" ng-click="delete(api.encodeURL, api.method)">删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Servers</h4>
-			</div>
-			<div class="modal-body">
-				<div class="table-responsive">
-					<table class="table table-bordered table-striped">
-						<thead>
-							<tr>
-								<th></th>
-								<th>名称</th>
-								<th>Pattern</th>
-								<th>Load Balance</th>
-								<th>ServerCounts</th>
-							</tr>
-						</thead>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Servers</h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>名称</th>
+                                <th>Pattern</th>
+                                <th>Load Balance</th>
+                                <th>ServerCounts</th>
+                            </tr>
+                        </thead>
 
-						<tbody>
-							<tr ng-repeat="cluster in clusters | filter: q">
-								<td>
-									<input type="checkbox" ng-model="cluster.checked" />
-								</td>
-								<td>{{cluster.name}}</td>
-								<td>{{cluster.pattern}}</td>
-								<td>{{cluster.lbName}}</td>
-								<td>{{cluster.count}}</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary" ng-click="bind()">Bind</button>
-			</div>
-		</div>
-	</div>
+                        <tbody>
+                            <tr ng-repeat="cluster in clusters | filter: q">
+                                <td>
+                                    <input type="checkbox" ng-model="cluster.checked" />
+                                </td>
+                                <td>{{cluster.name}}</td>
+                                <td>{{cluster.pattern}}</td>
+                                <td>{{cluster.lbName}}</td>
+                                <td>{{cluster.count}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="bind()">Bind</button>
+            </div>
+        </div>
+    </div>
 </div>
