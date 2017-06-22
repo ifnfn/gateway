@@ -43,6 +43,7 @@ const (
 
 // Server server
 type Server struct {
+	Name   string `json:"name,omitempty"`
 	Schema string `json:"schema,omitempty"`
 	Addr   string `json:"addr,omitempty"`
 
@@ -215,17 +216,13 @@ func (s *Server) getCheckTimeout() time.Duration {
 	return time.Duration(s.CheckTimeout)
 }
 
-func (s *Server) check(cb func(*Server)) bool {
+func (s *Server) check() bool {
 	succ := false
 	defer func() {
 		if succ {
 			s.reset()
 		} else {
 			s.fail()
-		}
-
-		if !s.checkStopped {
-			cb(s)
 		}
 	}()
 

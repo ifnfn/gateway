@@ -1,10 +1,10 @@
 {
-    "addr": ":80",
+    "addr": ":8088",
     "mgrAddr": ":8081",
     "etcdAddrs": [
-        "http://127.0.0.1:2379"
+        "http://roabay.com:2379"
     ],
-    "etcdPrefix": "/gateway",
+    "etcdPrefix": "/roabay",
     "filers": [
         {
             "name": "whitelist"

@@ -3,31 +3,31 @@
     <div class="panel-body">
         <div class="form-group">
             <label>
-                <strong>Server Addr:</strong>
+                <strong>服务器地址:</strong>
                 {{server.addr}}
             </label>
         </div>
         <div class="form-group">
             <label>
-                <strong>Server CheckPath:</strong>
+                <strong>服务器健康检查:</strong>
                 {{server.checkPath}}
             </label>
         </div>
         <div class="form-group">
             <label>
-                <strong>Server CheckResponsedBody:</strong>
+                <strong>期望返回的HTTP Body字串:</strong>
                 {{server.checkResponsedBody}}
             </label>
         </div>
         <div class="form-group">
             <label>
-                <strong>Server CheckTimeout:</strong>
+                <strong>健康检查单次请求超时时间:</strong>
                 {{server.checkTimeout}}
             </label>
         </div>
         <div class="form-group">
             <label>
-                <strong>Server CheckDuration:</strong>
+                <strong>健康检查间隔:</strong>
                 {{server.checkDuration}}
             </label>
         </div>
@@ -75,8 +75,8 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Unbind</th>
+                <th>名称</th>
+                <th>解绑定</th>
             </tr>
         </thead>
 
@@ -86,7 +86,7 @@
                     <a href="#/clusters/{{cluster}}">{{cluster}}</a>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-default btn-sm" ng-click="unbind(server.addr, cluster)">UnBind</button>
+                    <button type="button" class="btn btn-default btn-sm" ng-click="unbind(server.addr, cluster)">解绑定</button>
                 </td>
             </tr>
         </tbody>
