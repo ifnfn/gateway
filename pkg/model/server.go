@@ -243,6 +243,7 @@ func (s *Server) check() bool {
 	}
 
 	if s.CheckResponsedBody == "" {
+		succ = true
 		return true
 	}
 
